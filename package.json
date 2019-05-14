@@ -1,0 +1,19 @@
+{
+  "name": "fly-voice-ui",
+  "version": "1.0.0",
+  "description": "based on the vue and focus on audio or more.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Edward-1020/fly-voice-ui.git"
+  },
+  "author": "Edward-1020",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Edward-1020/fly-voice-ui/issues"
+  },
+  "homepage": "https://github.com/Edward-1020/fly-voice-ui#readme"
+}
