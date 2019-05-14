@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Edward-1020/fly-voice-ui/issues"
   },
-  "homepage": "https://github.com/Edward-1020/fly-voice-ui#readme"
+  "homepage": "https://github.com/Edward-1020/fly-voice-ui#readme",
+  "devDependencies": {
+    "lerna": "^3.13.4"
+  }
 }
