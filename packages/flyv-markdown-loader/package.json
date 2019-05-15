@@ -2,13 +2,14 @@
   "name": "@flyv/markdown-loader",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Edward-1020",
   "license": "MIT",
   "dependencies": {
-    "markdown-it": "^8.4.2"
+    "markdown-it": "^8.4.2",
+    "typescript": "^3.4.5"
   }
 }
