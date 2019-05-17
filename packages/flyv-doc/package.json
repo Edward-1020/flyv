@@ -1,0 +1,11 @@
+{
+  "name": "flyv-doc",
+  "version": "1.0.0",
+  "description": "flyv-ui doc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Edward-1020",
+  "license": "MIT"
+}
