@@ -11,7 +11,7 @@ const components = [
     Nav
 ];
 
-const initFlyvDoc = () => {
+export default function install () {
     components.map(Component => {
         Vue.component(Component.name, Component);
     });
@@ -21,6 +21,5 @@ export {
     App,
     Header,
     Container,
-    Nav,
-    initFlyvDoc
+    Nav
 }
