@@ -1,12 +1,12 @@
 <template>
-    <div class="flyv-doc-container">
+    <div class="flyv-doc-content">
         <slot />
     </div>
 </template>
 
 <script type="text/ecmascript-6">
 export default {
-    name: 'flyv-doc-container'
+    name: 'flyv-doc-content'
 }
 </script>
 

@@ -2,9 +2,9 @@
     <div class="flyv-doc">
         <flyv-doc-header />
         <flyv-doc-nav :config="config.nav" />
-        <flyv-doc-container>
+        <flyv-doc-content>
             <slot />
-        </flyv-doc-container>
+        </flyv-doc-content>
     </div>
 </template>
 
