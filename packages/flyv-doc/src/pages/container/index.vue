@@ -1,5 +1,6 @@
 <template>
     <div class="flyv-doc-container">
+        <slot />
     </div>
 </template>
 
