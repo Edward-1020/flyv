@@ -1,4 +1,6 @@
 <template>
+    <div class="flyv-doc-container">
+    </div>
 </template>
 
 <script type="text/ecmascript-6">
