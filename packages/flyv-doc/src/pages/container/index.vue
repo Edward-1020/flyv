@@ -1,6 +1,6 @@
 <template>
     <div class="flyv-doc-container">
-            <flyv-doc-nav :config="config.nav">
+            <flyv-doc-nav :config="config.nav" />
             <flyv-doc-content>
                 <slot />
             </flyv-doc-content>
