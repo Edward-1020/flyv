@@ -100,6 +100,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return install; });
 /* harmony import */ var _App_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _pages_container_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
 /* harmony import */ var _pages_head_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12);
@@ -113,16 +114,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const components = [_App_vue__WEBPACK_IMPORTED_MODULE_0__["default"], _pages_container_index__WEBPACK_IMPORTED_MODULE_1__["default"], _pages_head_index__WEBPACK_IMPORTED_MODULE_2__["default"], _pages_content_index__WEBPACK_IMPORTED_MODULE_3__["default"], _pages_nav_index__WEBPACK_IMPORTED_MODULE_4__["default"], _pages_simulator_index__WEBPACK_IMPORTED_MODULE_5__["default"]];
-const FlyDoc = {};
-
-FlyDoc.install = (Vue, opts) => {
+function install(Vue, opts) {
   components.map(Component => {
     Vue.component(Component.name, Component);
-    console.log(Component.name, Component);
   });
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (FlyDoc);
+}
+;
 
 /***/ }),
 /* 1 */
@@ -181,21 +178,23 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "flyv-doc" },
-    [
-      _c("flyv-doc-header"),
-      _vm._v(" "),
-      _c(
-        "flyv-doc-container",
-        { attrs: { config: _vm.config } },
-        [_vm._t("default")],
-        2
+  return _vm.config
+    ? _c(
+        "div",
+        { staticClass: "flyv-doc" },
+        [
+          _c("flyv-doc-header"),
+          _vm._v(" "),
+          _c(
+            "flyv-doc-container",
+            { attrs: { config: _vm.config } },
+            [_vm._t("default")],
+            2
+          )
+        ],
+        1
       )
-    ],
-    1
-  )
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true

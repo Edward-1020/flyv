@@ -1,5 +1,5 @@
 <template>
-    <div class="flyv-doc">
+    <div class="flyv-doc" v-if="config">
         <flyv-doc-header />
         <flyv-doc-container :config="config">
             <slot />

@@ -15,12 +15,8 @@ const components = [
     Simulator
 ];
 
-const FlyDoc = {};
-
-FlyDoc.install = (Vue, opts) => {
+export default function install (Vue, opts) {
     components.map(Component => {
         Vue.component(Component.name, Component);
     });
 };
-
-export default FlyDoc;
