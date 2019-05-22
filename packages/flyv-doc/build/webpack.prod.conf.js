@@ -8,12 +8,14 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, '../lib'),
-        filename: '[name].js'
+        filename: '[name].js',
+        libraryTarget: 'umd'
     },
     module: {
         rules: [
             {
                 test: /\.js$/,
+                exclude: /node_modules/,
                 use: [
                     'babel-loader'
                 ]
@@ -33,6 +35,11 @@ module.exports = {
         extensions: ['.js', '.vue']
     },
     externals: {
-        vue: 'Vue'
-    }
+        vue: {
+            commonjs: 'vue',
+            commonjs2: 'vue',
+            amd: 'vue',
+            root: 'Vue'
+        }
+    },
 }

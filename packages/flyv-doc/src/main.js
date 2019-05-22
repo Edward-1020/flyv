@@ -1,4 +1,3 @@
-import Vue from 'vue';
 import App from './App.vue';
 import Container from './pages/container/index';
 import Header from './pages/head/index';
@@ -16,17 +15,12 @@ const components = [
     Simulator
 ];
 
-export default function install () {
+const FlyDoc = {};
+
+FlyDoc.install = (Vue, opts) => {
     components.map(Component => {
         Vue.component(Component.name, Component);
     });
-}
+};
 
-export {
-    App,
-    Container,
-    Header,
-    Content,
-    Nav,
-    Simulator
-}
+export default FlyDoc;
