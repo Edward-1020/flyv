@@ -4,31 +4,32 @@
     box-sizing: border-box;
     width: 220px;
     height: 100%;
-    padding: 60px 0;
+    padding: 20px 0;
+    border-right: 1px solid $flyv-doc-border-color;
     overflow-y: scroll;
 
     .flyv-doc-nav__item {
         a {
             display: block;
-            border-left: 4px;
+            text-align: left;
             padding: 10px 20px 10px 40px;
             font-size: 13px;
             line-height: 22px;
-        }
-
-        a:hover {
-            background: $flyv-doc-nav-active-color
         }
 
         .flyv-doc-nav__title {
             font-size: 16px;
             font-weight: 700;
         }
+        .flyv-doc-nav-link {
+            cursor:pointer;
+        }
+        .flyv-doc-nav-link:hover {
+            color: $flyv-doc-red-color;
+        }
 
         .flyv-doc-nav-link_active {
             color: $flyv-doc-red-color;
-            border-left-color: $flyv-doc-red-color;
-            background: $flyv-doc-nav-active-color
         }
     }
 }

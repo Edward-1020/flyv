@@ -1,6 +1,6 @@
 <template>
-    <head class="flyv-doc-header">
-    </head>
+    <div class="flyv-doc-header">
+    </div>
 </template>
 
 <script type="text/ecmascript-6">

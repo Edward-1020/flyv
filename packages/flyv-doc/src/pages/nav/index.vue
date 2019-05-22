@@ -12,6 +12,7 @@
                 <flyv-doc-nav-link
                     v-for="(navItem, index) in groupItem.list"
                     :key="index"
+                    :active="active"
                     :config="navItem"/>
             </div>
         </div>
@@ -23,6 +24,11 @@ import NavLink from './nav-link/index';
 
 export default {
     name: 'flyv-doc-nav',
+    data () {
+        return {
+            active: ''
+        }
+    },
     props: {
         config: Array
     },
