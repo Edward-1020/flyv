@@ -689,18 +689,22 @@ var render = function() {
         "div",
         { key: index, staticClass: "flyv-doc-nav__item" },
         [
-          _c("a", { staticClass: "flyv-doc-nav__title" }, [
-            _vm._v(_vm._s(item.name))
-          ]),
+          item.name
+            ? _c("a", { staticClass: "flyv-doc-nav__title" }, [
+                _vm._v(_vm._s(item.name))
+              ])
+            : _vm._e(),
           _vm._v(" "),
           _vm._l(item.groups, function(groupItem, index) {
             return _c(
               "div",
               { key: index },
               [
-                _c("a", { staticClass: "flyv-doc-nav__group-title" }, [
-                  _vm._v(_vm._s(groupItem.name))
-                ]),
+                groupItem.name
+                  ? _c("a", { staticClass: "flyv-doc-nav__group-title" }, [
+                      _vm._v(_vm._s(groupItem.name))
+                    ])
+                  : _vm._e(),
                 _vm._v(" "),
                 _vm._l(groupItem.list, function(navItem, index) {
                   return _c("flyv-doc-nav-link", {
