@@ -33,6 +33,6 @@ module.exports = {
         extensions: ['.js', '.vue']
     },
     externals: {
-        vue: 'vue'
+        vue: 'Vue'
     }
 }

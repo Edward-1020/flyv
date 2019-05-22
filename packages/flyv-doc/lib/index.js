@@ -130,7 +130,7 @@ function install() {
 /* 1 */
 /***/ (function(module, exports) {
 
-module.exports = vue;
+module.exports = Vue;
 
 /***/ }),
 /* 2 */
