@@ -1,7 +1,7 @@
-@import '../../style/variable.scss';
+@import './variable.scss';
 
 .flyv-doc-header {
-    width: 100%;
-    min-height: 60px;
+    width: 100vw;
+    height: 60px;
     border-bottom: 1px solid $flyv-doc-border-color;
 }

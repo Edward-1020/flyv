@@ -1,5 +1,5 @@
 <template>
-    <router-link :to="config.path" v-html="config.name"/>
+    <router-link class="flyv-doc-nav-link" :to="config.path" v-html="config.name"/>
 </template>
 
 <script type="text/ecmascript-6">
