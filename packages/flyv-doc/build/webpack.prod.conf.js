@@ -1,5 +1,6 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const babelConfig = require('../../../babel.cofig');
 
 module.exports = {
     mode: 'none',
@@ -17,7 +18,10 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: [
-                    'babel-loader'
+                    {
+                        loader: 'babel-loader',
+                        options: babelConfig()
+                    }
                 ]
             },
             {
