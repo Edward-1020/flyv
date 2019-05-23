@@ -1,6 +1,6 @@
 export default [
     {
-        path: '/button',
+        path: '/a',
         name: 'button',
         component: () => import('../../../packages/button/index.md')
     }

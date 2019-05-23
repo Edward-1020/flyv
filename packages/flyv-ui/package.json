@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:flyv-ui-doc": "webpack-dev-server --config ./build/webpack.base.conf.js --watch"
+    "dev": "webpack-dev-server --config ./build/webpack.base.conf.js --watch"
   },
   "author": "Edward-1020",
   "license": "MIT",

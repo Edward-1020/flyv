@@ -38,9 +38,7 @@ module.exports = {
                     {
                         loader: 'css-loader',
                         options: {
-                          sourceMap: false,
-                          modules: true,
-                          localIdentName: '[name]_[local]_[hash:base64:5]'
+                          sourceMap: false
                         }
                     },
                     {
