@@ -1,7 +1,7 @@
 .DS_Store
 node_modules
 /dist
-
+./packages/flyv-ui/lib
 # local env files
 .env.local
 .env.*.local

@@ -1,14 +1,14 @@
 const hljs = require('highlight.js');
 const markdownIt = require('markdown-it');
 
-const highlight = (str: string, lang: string): string=> lang && hljs.getLanguage(lang) ? hljs.highlight(lang, str, true).value : '';
+const highlight = (str, lang) => lang && hljs.getLanguage(lang) ? hljs.highlight(lang, str, true).value : '';
 
 const parser = new markdownIt({
     html: true,
     highlight
 });
 
-const getVueTemplate = (content: string): string=> `
+const getVueTemplate = (content) => `
 <template>
     <section v-html="content"/>
 </template>
@@ -21,12 +21,12 @@ export default {
         }
     },
     created () {
-        this.content = ${content};
+        this.content = unescape(\`${escape(content)}\`);
     }
 }
 </script>
 `;
 
-module.exports = function (source: string) {
+module.exports = function (source) {
     return getVueTemplate(parser.render(source));
 }
