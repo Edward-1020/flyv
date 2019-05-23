@@ -3,8 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "author": "Edward-1020",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@flyv/doc": "^1.0.0",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.6"
+  },
+  "devDependencies": {
+    "@flyv/markdown-loader": "^1.0.0"
+  }
 }
