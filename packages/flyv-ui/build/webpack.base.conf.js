@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const babelConfig = require('../babel.cofig');
+const babelConfig = require('../../../babel.cofig');
 
 module.exports = {
     mode: "development",
@@ -17,10 +17,12 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: babelConfig()
-                }
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: babelConfig()
+                    }
+                ]
             },
             {
                 test: /\.css$/,
@@ -46,7 +48,7 @@ module.exports = {
                         options: {
                             sourceMap: false,
                             config: {
-                                path: path.resolve(__dirname, '../postcss.config.js')
+                                path: path.resolve(__dirname, '../../../postcss.config.js')
                             }
                         }
                     }
