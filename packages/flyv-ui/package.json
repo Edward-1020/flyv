@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --config ./build/webpack.doc.base.conf.js --watch"
+    "dev:doc": "webpack-dev-server --config ./build/webpack.doc.base.conf.js --watch",
+    "build:doc": "webpack --config ./build/webpack.doc.base.conf.js"
   },
   "author": "Edward-1020",
   "license": "MIT",
