@@ -1,7 +1,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const babelConfig = require('../../../babel.cofig');
+const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
     mode: "development",
@@ -10,7 +13,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, '../lib'),
-        filename: '[name].js'
+        filename: '[name].[hash].js'
     },
     module: {
         rules: [
@@ -25,11 +28,11 @@ module.exports = {
                 ]
             },
             {
-                test: /\.css$/,
+                test: /\.(sa|sc|c)ss$/,
                 exclude: /node_modules/,
                 use: [
                     {
-                        loader: 'vue-style-loader',
+                        loader: devMode ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
                         options: {
                           sourceMap: false,
                           shadowMode: false
@@ -48,6 +51,12 @@ module.exports = {
                             config: {
                                 path: path.resolve(__dirname, '../../../postcss.config.js')
                             }
+                        }
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: false
                         }
                     }
                 ]
@@ -68,12 +77,17 @@ module.exports = {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin(),
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin(
             {
               template: path.resolve(__dirname, '../public/index.html')
             }
         ),
+        new MiniCssExtractPlugin({
+            filename: "[name].[contenthash].css",
+            chunkFilename: "[id].[contenthash].css"
+        })
     ],
     resolve: {
         extensions: ['.js', '.vue']
