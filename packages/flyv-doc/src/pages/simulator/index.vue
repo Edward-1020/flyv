@@ -8,6 +8,3 @@ export default {
     name: 'flyv-doc-simulator'
 }
 </script>
-
-<style scoped lang="scss" rel="stylesheet/scss">
-</style>

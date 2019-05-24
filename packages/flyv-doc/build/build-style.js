@@ -25,19 +25,6 @@ gulp.task('build:watch', () => {
       path.resolve(__dirname, '../src/style/*.scss'),
       `!${path.resolve(__dirname, '../src/style/variable.scss')}`
     ],
-    () => {
-      gulp.task('build', () => {
-        return gulp.src(
-            [
-              path.resolve(__dirname, '../src/style/*.scss'),
-              `!${path.resolve(__dirname, '../src/style/variable.scss')}`
-            ]
-        )
-          .pipe(sass().on('error', sass.logError))
-          .pipe(concat('style.css'))
-          .pipe(cssmin())
-          .pipe(gulp.dest(path.resolve(__dirname, '../lib')));
-      });
-    }
+    gulp.series('build')
   );
 });
