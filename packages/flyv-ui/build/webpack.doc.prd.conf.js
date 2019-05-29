@@ -5,7 +5,7 @@ const base = require('./webpack.doc.base.conf');
 module.exports = merge(base, {
     mode: 'production',
     output: {
-        path: path.resolve(__dirname, '../lib'),
+        path: path.resolve(__dirname, '../docs/lib'),
         filename: '[name].[chunkhash].js'
     },
 });

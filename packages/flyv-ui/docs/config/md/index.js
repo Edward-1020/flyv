@@ -2,6 +2,6 @@ export default [
     {
         path: '/a',
         name: 'button',
-        component: () => import('../../../packages/button/index.md')
+        component: () => import('../../../packages/progress/index.md')
     }
 ]
