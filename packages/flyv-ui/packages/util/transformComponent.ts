@@ -1,11 +1,24 @@
-import {
+import Vue, {
     VNode,
+    VueConstructor,
+    ComponentOptions,
     CreateElement,
     RenderContext
   } from 'vue';
 import { PropsDefinition } from 'vue/types/options';
 
+export function install(this: ComponentOptions<Vue>, Vue: VueConstructor) {
+  const { name } = this;
+  Vue.component(name as string, this);
+}
+
 export type DefaultProps = Record<string, any>;
+
+export interface FlyvComponentOptions {
+  name?: string,
+  functional?: boolean;
+  install?: (Vue: VueConstructor) => void;
+}
 
 export type FunctionComponent<Props = DefaultProps> = {
   (
@@ -16,11 +29,11 @@ export type FunctionComponent<Props = DefaultProps> = {
 };
 
 export function transformComponentName(name: string): string {
-    name = 'van-' + name;
+    name = 'flyv-' + name;
     return name;
 }
 
-export function transFormFunctionComponent<Props = DefaultProps>(pure: FunctionComponent<Props>) {
+export function transformFunctionComponent<Props = DefaultProps>(pure: FunctionComponent<Props>) {
     return {
         functional: true,
         props: pure.props,
@@ -29,13 +42,10 @@ export function transFormFunctionComponent<Props = DefaultProps>(pure: FunctionC
     };
 }
 
-function Button (
-    h: CreateElement,
-    ctx: RenderContext
-) {
-    return undefined;
+export const transformComponent = (name: string) => (componentOpts: FlyvComponentOptions | FunctionComponent) => {
+  if (typeof componentOpts === 'function') {
+    componentOpts = transformFunctionComponent(componentOpts);
+  }
+  componentOpts.name = transformComponentName(name);
+  componentOpts.install = install;
 }
-
-Button.props = {};
-
-transFormFunctionComponent(Button);
