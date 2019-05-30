@@ -28,8 +28,20 @@ packagesDirs.forEach((componentDir) => {
     })
 });
 
+const getFileOutPath = (arr) => {
+    return arr.map((filePath) => {
+        let filePathArr = filePath.replace(/packages(?!\/flyv-ui)/, 'lib').split('/');
+        filePathArr.pop();
+        filePath = filePathArr.join('/');
+        return filePath;
+    });
+}
+
+let jsFileOutPath = getFileOutPath(jsFilePath);
+let styleFileOutPath = getFileOutPath(styleFilePath);
+
 gulp.task('build:js', () => {
-    const tasks = jsFilePath.map((filePath) => {
+    const tasks = jsFilePath.map((filePath, index) => {
         return gulp.src(
             filePath
         )
@@ -47,7 +59,7 @@ gulp.task('build:js', () => {
                     ]
                 }
             ))
-            .pipe(gulp.dest(filePath.replace(/packages(?!\/flyv-ui)/, 'lib')));
+            .pipe(gulp.dest(jsFileOutPath[index]), 'lib');
     });
 
     return merge(tasks);
@@ -55,13 +67,13 @@ gulp.task('build:js', () => {
 );
 
 gulp.task('build:style', () => {
-    const tasks = styleFilePath.map((filePath) => {
+    const tasks = styleFilePath.map((filePath, index) => {
         return gulp.src(
             filePath
         )
             .pipe(sass().on('error', sass.logError))
             .pipe(cssmin())
-            .pipe(gulp.dest(filePath.replace(/packages(?!\/flyv-ui)/, 'lib')));
+            .pipe(gulp.dest(styleFileOutPath[index]));
     });
 
     return merge(tasks);
