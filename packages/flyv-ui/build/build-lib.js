@@ -48,14 +48,19 @@ gulp.task('build:js', () => {
             .pipe(babel(
                 {
                     presets: [
-                        '@babel/preset-env',
+                        [
+                            '@babel/preset-env',
+                            {
+                              modules: false
+                            }
+                        ],
                         [
                         '@vue/babel-preset-jsx',
                             {
                                 functional: false
                             }
                         ],
-                        '@babel/preset-typescript'
+                        ['@babel/preset-typescript']
                     ]
                 }
             ))

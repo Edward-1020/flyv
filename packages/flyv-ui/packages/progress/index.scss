@@ -1,0 +1,42 @@
+$color-theme: #32D797;
+
+.flyv-progress {
+    width: 4.24rem;
+}
+.flyv-progress__inner{
+    position: relative;
+    height: 2px;
+    background: #BEBEBE;
+        .flyv-progress__bar {
+            position: absolute;
+            height: 100%;
+            background: linear-gradient(-135deg, #45DCA1 0%, #00CC7D 100%);
+        }
+        .flyv-progress__btn-wrapper {
+            position: absolute;
+            left: -8px;
+            top: -14px;
+            width: 32px;
+            height: 32px;
+        }
+        .flyv-progress__btn-ct {
+                position: absolute;
+                top: 8px;
+                left: 8px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-sizing: border-box;
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                background: linear-gradient(-135deg, #45DCA1 0%, #00CC7D 100%);
+            .flyv-progress__btn {
+                box-sizing: border-box;
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background: #FFFFFF;
+            }
+        }
+}

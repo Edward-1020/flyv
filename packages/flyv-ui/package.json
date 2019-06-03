@@ -2,7 +2,7 @@
   "name": "@flyv/ui",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "scripts": {
     "dev:doc": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack.doc.base.conf.js --watch",
     "build:doc": "cross-env NODE_ENV=production webpack --config ./build/webpack.doc.prd.conf.js",

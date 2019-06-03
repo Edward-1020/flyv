@@ -1,9 +1,3 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.prefixStyle = prefixStyle;
 var elementStyle = document.createElement('div').style;
 
 var vendor = function () {
@@ -24,9 +18,9 @@ var vendor = function () {
   return false;
 }();
 
-function prefixStyle(style) {
+export function prefixStyle(style) {
   if (vendor === false) {
-    return false;
+    return style;
   }
 
   if (vendor === 'standard') {

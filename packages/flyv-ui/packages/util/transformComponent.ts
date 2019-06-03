@@ -14,12 +14,6 @@ export function install(this: ComponentOptions<Vue>, Vue: VueConstructor) {
 
 export type DefaultProps = Record<string, any>;
 
-export interface FlyvComponentOptions {
-  name?: string,
-  functional?: boolean;
-  install?: (Vue: VueConstructor) => void;
-}
-
 export type FunctionComponent<Props = DefaultProps> = {
   (
     h: CreateElement,
@@ -42,10 +36,11 @@ export function transformFunctionComponent<Props = DefaultProps>(pure: FunctionC
     };
 }
 
-export const transformComponent = (name: string) => (componentOpts: FlyvComponentOptions | FunctionComponent) => {
+export const transformComponent = (name: string) => (componentOpts: FunctionComponent | any) => {
   if (typeof componentOpts === 'function') {
     componentOpts = transformFunctionComponent(componentOpts);
   }
   componentOpts.name = transformComponentName(name);
   componentOpts.install = install;
+  return componentOpts;
 }
