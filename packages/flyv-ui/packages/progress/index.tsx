@@ -43,7 +43,7 @@ export default transformComponent('progress')({
             const percent = Math.min(this.$refs.progress.clientWidth / barWidth, 1);
             this.$emit('percentChange', percent);
         },
-        _offset (offsetWidth) {
+        _offset (offsetWidth: number) {
             this.$refs.progress.style.width = `${offsetWidth}px`;
             this.$refs.progressBtn.style[transformPrefix] = `translate3d(${offsetWidth}px, 0, 0)`;
         }
