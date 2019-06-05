@@ -4,11 +4,15 @@ import { transformComponent } from '../util/transformComponent';
 import {prefixStyle} from '../util/dom';
 
 const bem = prefixBem('progress');
-const PROGRESS_BTN_WIDTH = 16;
+const PROGRESS_BTN_WIDTH = 8;
 const transformPrefix = prefixStyle('transform');
 
 export default transformComponent('progress')({
     props: {
+        progressBtnWidrth: {
+            type: Number,
+            default: PROGRESS_BTN_WIDTH
+        },
         percent: {
             type: Number,
             default: 0
@@ -25,7 +29,7 @@ export default transformComponent('progress')({
                 return;
             }
             const deltaX = e.touches[0].pageX - this.touch.startX;
-            const offsetWidth = Math.min(this.$refs.progressBar.clientWidth - PROGRESS_BTN_WIDTH, Math.max(0, this.touch.left + deltaX));
+            const offsetWidth = Math.min(this.$refs.progressBar.clientWidth - this.progressBtnWidrth, Math.max(0, this.touch.left + deltaX));
             this._offset(offsetWidth);            
         },
         progressTouchEnd () {
@@ -39,7 +43,7 @@ export default transformComponent('progress')({
             }
         },
         _triggerPercent () {
-            const barWidth = this.$refs.progressBar.clientWidth - PROGRESS_BTN_WIDTH;
+            const barWidth = this.$refs.progressBar.clientWidth - this.progressBtnWidrth;
             const percent = Math.min(this.$refs.progress.clientWidth / barWidth, 1);
             this.$emit('percentChange', percent);
         },
@@ -62,9 +66,7 @@ export default transformComponent('progress')({
                         onTouchend={this.progressTouchEnd}
                         ref="progressBtn"
                         class={bem('btn-wrapper')}>
-                            <div class={bem('btn-ct')}>
-                                <div class={bem('btn')}></div>
-                            </div>
+                            <div class={bem('btn')}></div>
                     </div>
                 </div>
             </div>

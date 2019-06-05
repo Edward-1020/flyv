@@ -2,10 +2,14 @@ import { prefixBem } from '../util/bem';
 import { transformComponent } from '../util/transformComponent';
 import { prefixStyle } from '../util/dom';
 var bem = prefixBem('progress');
-var PROGRESS_BTN_WIDTH = 16;
+var PROGRESS_BTN_WIDTH = 8;
 var transformPrefix = prefixStyle('transform');
 export default transformComponent('progress')({
   props: {
+    progressBtnWidrth: {
+      type: Number,
+      "default": PROGRESS_BTN_WIDTH
+    },
     percent: {
       type: Number,
       "default": 0
@@ -23,7 +27,7 @@ export default transformComponent('progress')({
       }
 
       var deltaX = e.touches[0].pageX - this.touch.startX;
-      var offsetWidth = Math.min(this.$refs.progressBar.clientWidth - PROGRESS_BTN_WIDTH, Math.max(0, this.touch.left + deltaX));
+      var offsetWidth = Math.min(this.$refs.progressBar.clientWidth - this.progressBtnWidrth, Math.max(0, this.touch.left + deltaX));
 
       this._offset(offsetWidth);
     },
@@ -40,7 +44,7 @@ export default transformComponent('progress')({
       }
     },
     _triggerPercent: function _triggerPercent() {
-      var barWidth = this.$refs.progressBar.clientWidth - PROGRESS_BTN_WIDTH;
+      var barWidth = this.$refs.progressBar.clientWidth - this.progressBtnWidrth;
       var percent = Math.min(this.$refs.progress.clientWidth / barWidth, 1);
       this.$emit('percentChange', percent);
     },
@@ -73,9 +77,7 @@ export default transformComponent('progress')({
       "ref": "progressBtn",
       "class": bem('btn-wrapper')
     }, [h("div", {
-      "class": bem('btn-ct')
-    }, [h("div", {
       "class": bem('btn')
-    })])])])]);
+    })])])]);
   }
 });
