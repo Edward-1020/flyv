@@ -9,7 +9,7 @@ const transformPrefix = prefixStyle('transform');
 
 export default transformComponent('progress')({
     props: {
-        progressBtnWidrth: {
+        progressBtnWidth: {
             type: Number,
             default: PROGRESS_BTN_WIDTH
         },
@@ -29,7 +29,7 @@ export default transformComponent('progress')({
                 return;
             }
             const deltaX = e.touches[0].pageX - this.touch.startX;
-            const offsetWidth = Math.min(this.$refs.progressBar.clientWidth - this.progressBtnWidrth, Math.max(0, this.touch.left + deltaX));
+            const offsetWidth = Math.min(this.$refs.progressBar.clientWidth - this.progressBtnWidth, Math.max(0, this.touch.left + deltaX));
             this._offset(offsetWidth);            
         },
         progressTouchEnd () {
@@ -43,7 +43,7 @@ export default transformComponent('progress')({
             }
         },
         _triggerPercent () {
-            const barWidth = this.$refs.progressBar.clientWidth - this.progressBtnWidrth;
+            const barWidth = this.$refs.progressBar.clientWidth - this.progressBtnWidth;
             const percent = Math.min(this.$refs.progress.clientWidth / barWidth, 1);
             this.$emit('percentChange', percent);
         },
