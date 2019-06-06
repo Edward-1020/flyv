@@ -1,16 +1,16 @@
-$color-theme: #32D797;
+@import '../style/var';
 
 .flyv-progress {
-    width: 4.24rem;
+    width: 100%;
 }
 .flyv-progress__inner{
     position: relative;
     height: 2px;
-    background: rgba(0, 0, 0, 0.1);
+    background: $dynamic-resource-background;
         .flyv-progress__bar {
             position: absolute;
             height: 100%;
-            background: #ce3d3a;
+            background: $red;
         }
         .flyv-progress__btn-wrapper {
             position: absolute;
@@ -25,6 +25,6 @@ $color-theme: #32D797;
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            background: #ce3d3a;
+            background: $red;
         }
 }
