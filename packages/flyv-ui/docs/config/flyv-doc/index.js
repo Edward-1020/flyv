@@ -1,13 +1,13 @@
 export default {
     nav: [
       {
-        name: '1',
+        name: '基础组件',
         groups: [
           {
             list: [
               {
-                name: '你好',
-                path: '/#/a'
+                name: 'Progress 进度条',
+                path: '/#/progress'
               }
             ]
           }

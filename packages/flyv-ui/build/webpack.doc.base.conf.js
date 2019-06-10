@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const babelConfig = require('../../../babel.cofig');
 const devMode = process.env.NODE_ENV !== 'production';
@@ -12,7 +11,7 @@ module.exports = {
         index: path.resolve(__dirname, '../docs/main.js')
     },
     output: {
-        path: path.resolve(__dirname, '../lib'),
+        path: path.resolve(__dirname, '../docs/lib'),
         filename: '[name].[hash].js'
     },
     module: {
@@ -77,7 +76,6 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(),
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin(
             {
