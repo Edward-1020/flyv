@@ -16,4 +16,4 @@ const flyvDocConfig = {
   ]
 }
 
-export default 
+export default flyvDocConfig;
