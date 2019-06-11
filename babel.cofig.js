@@ -1,6 +1,7 @@
 module.exports = function () {
     const presets = [
-        '@babel/preset-env'
+        '@babel/preset-env',
+        '@babel/preset-typescript'
     ];
     const plugins = [
         '@babel/plugin-syntax-dynamic-import'

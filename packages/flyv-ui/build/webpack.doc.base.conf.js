@@ -17,7 +17,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(js|ts)$/,
                 exclude: /node_modules/,
                 use: [
                     {
@@ -88,7 +88,7 @@ module.exports = {
         })
     ],
     resolve: {
-        extensions: ['.js', '.vue']
+        extensions: ['.js', '.ts', '.tsx', '.vue']
     },
     devServer: {
         contentBase: path.resolve(__dirname, '../lib'),

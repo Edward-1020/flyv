@@ -4,4 +4,4 @@ export default [
         name: 'Progress',
         component: () => import('../../../packages/progress/index.md')
     }
-]
+];
