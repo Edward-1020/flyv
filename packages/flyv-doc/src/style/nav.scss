@@ -13,23 +13,23 @@
             display: block;
             text-align: left;
             padding: 10px 20px 10px 40px;
-            font-size: 13px;
+            font-size: 14px;
             line-height: 22px;
         }
 
         .flyv-doc-nav__title {
-            font-size: 16px;
+            font-size: 17px;
             font-weight: 700;
         }
         .flyv-doc-nav-link {
             cursor:pointer;
         }
         .flyv-doc-nav-link:hover {
-            color: $flyv-doc-red-color;
+            color: $flyv-doc-blue-color;
         }
 
         .flyv-doc-nav-link_active {
-            color: $flyv-doc-red-color;
+            color: $flyv-doc-blue-color;
         }
     }
 }
