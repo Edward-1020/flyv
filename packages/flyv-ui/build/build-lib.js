@@ -14,18 +14,20 @@ let styleFilePath = [];
 
 packagesDirs.forEach((componentDir) => {
     componentDir = path.join(packagesDir, componentDir);
-    const files = fs.readdirSync(componentDir);
-    files.forEach((file) => {
-        const filePath = path.join(componentDir, file);
-    
-        if (/(\.js)|(\.ts)|(\.tsx)/.test(filePath)) {
-            jsFilePath.push(filePath)
-        }
-    
-        if (/(\.css)|(\.scss)|(\.sass)/.test(filePath)) {
-            styleFilePath.push(filePath)
-        }
-    })
+    if (fs.statSync(componentDir).isDirectory()) {
+        const files = fs.readdirSync(componentDir);
+        files.forEach((file) => {
+            const filePath = path.join(componentDir, file);
+        
+            if (/(\.js)|(\.ts)|(\.tsx)/.test(filePath)) {
+                jsFilePath.push(filePath)
+            }
+        
+            if (/(\.css)|(\.scss)|(\.sass)/.test(filePath)) {
+                styleFilePath.push(filePath)
+            }
+        })
+    }
 });
 
 const getFileOutPath = (arr) => {

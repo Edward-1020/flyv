@@ -9,6 +9,11 @@ const routes: route[] = [
         path: '/progress',
         name: 'Progress',
         component: () => import('../../../packages/progress/index.md')
+    },
+    {
+        path: '/icon',
+        name: 'Icon',
+        component: () => import('../../../packages/icon/index.md')
     }
 ];
 
