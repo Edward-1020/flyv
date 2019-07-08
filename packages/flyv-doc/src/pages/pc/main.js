@@ -5,6 +5,8 @@ import Content from './content/index';
 import Nav from './nav/index';
 import Simulator from './simulator/index';
 
+import { installComponent } from '../../util/component';
+
 
 const components = [
     App,
@@ -16,7 +18,5 @@ const components = [
 ];
 
 export default function install (Vue, opts) {
-    components.map(Component => {
-        Vue.component(Component.name, Component);
-    });
+    installComponent(components, Vue, opts)
 };
