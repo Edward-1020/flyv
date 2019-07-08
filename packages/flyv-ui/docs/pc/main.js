@@ -3,7 +3,7 @@ import VueRouter from 'vue-router';
 import App from './App.vue';
 import FlyvDoc from '@flyv/doc';
 import '@flyv/doc/lib/style.pc.css';
-import routes from './config/routes/index';
+import routes from '../config/routes/index';
 
 Vue.config.productionTip = false;
 Vue.use(VueRouter).use(FlyvDoc);

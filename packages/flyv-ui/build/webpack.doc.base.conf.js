@@ -8,7 +8,7 @@ const devMode = process.env.NODE_ENV !== 'production';
 module.exports = {
     mode: "development",
     entry: {
-        index: path.resolve(__dirname, '../docs/main.js')
+        index: path.resolve(__dirname, '../docs/pc/main.js')
     },
     output: {
         path: path.resolve(__dirname, '../docs/lib'),

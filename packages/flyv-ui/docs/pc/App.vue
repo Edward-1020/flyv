@@ -5,7 +5,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-import config from './config/flyv-doc/index';
+import config from '../config/flyv-doc/index';
 
 export default {
     data () {
