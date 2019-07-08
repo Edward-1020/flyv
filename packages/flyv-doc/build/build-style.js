@@ -9,8 +9,8 @@ sass.compiler = require('node-sass');
 gulp.task('build', () => {
   return gulp.src(
       [
-        path.resolve(__dirname, '../src/style/*.scss'),
-        `!${path.resolve(__dirname, '../src/style/variable.scss')}`
+        path.resolve(__dirname, '../src/style/pc/*.scss'),
+        `!${path.resolve(__dirname, '../src/style/pc/variable.scss')}`
       ]
   )
     .pipe(sass().on('error', sass.logError))
@@ -22,8 +22,8 @@ gulp.task('build', () => {
 gulp.task('build:watch', () => {
   gulp.watch(
     [
-      path.resolve(__dirname, '../src/style/*.scss'),
-      `!${path.resolve(__dirname, '../src/style/variable.scss')}`
+      path.resolve(__dirname, '../src/style/pc/*.scss'),
+      `!${path.resolve(__dirname, '../src/style/pc/variable.scss')}`
     ],
     gulp.series('build')
   );

@@ -5,7 +5,7 @@ const babelConfig = require('../../../babel.cofig');
 module.exports = {
     mode: 'none',
     entry: {
-        index: path.resolve(__dirname, '../src/main.js')
+        index: path.resolve(__dirname, '../src/pages/pc/main.js')
     },
     output: {
         path: path.resolve(__dirname, '../lib'),

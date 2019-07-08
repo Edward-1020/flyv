@@ -1,9 +1,9 @@
 import App from './App.vue';
-import Container from './pages/pc/container/index';
-import Header from './pages/pc/head/index';
-import Content from './pages/pc/content/index';
-import Nav from './pages/pc/nav/index';
-import Simulator from './pages/pc/simulator/index';
+import Container from './container/index';
+import Header from './head/index';
+import Content from './content/index';
+import Nav from './nav/index';
+import Simulator from './simulator/index';
 
 
 const components = [
