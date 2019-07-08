@@ -1,7 +1,7 @@
 <template>
-    <flyv-doc :config="config">
+    <flyv-simulator>
         <router-view />
-    </flyv-doc>
+    </flyv-simulator>
 </template>
 
 <script type="text/ecmascript-6">

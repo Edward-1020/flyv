@@ -8,7 +8,8 @@ const devMode = process.env.NODE_ENV !== 'production';
 module.exports = {
     mode: "development",
     entry: {
-        index: path.resolve(__dirname, '../docs/pc/main.js')
+        index: path.resolve(__dirname, '../docs/pc/main.js'),
+        mobile: path.resolve(__dirname, '../docs/mobile/main.js')
     },
     output: {
         path: path.resolve(__dirname, '../docs/lib'),
@@ -79,7 +80,16 @@ module.exports = {
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin(
             {
-              template: path.resolve(__dirname, '../public/index.html')
+                filename: 'index.html',
+                chunks:['index'],
+                template: path.resolve(__dirname, '../public/index.html')
+            }
+        ),
+        new HtmlWebpackPlugin(
+            {
+                filename: 'mobile.html',
+                chunks:['mobile'],
+                template: path.resolve(__dirname, '../public/mobile.html')
             }
         ),
         new MiniCssExtractPlugin({
