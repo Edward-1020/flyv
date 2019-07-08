@@ -1,7 +1,14 @@
+@import './variable.scss';
+
 .flyv-doc-simulator {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 30px;
+    right: 40px;
+    z-index: 1;
     width: 360px;
-    height: 100%;
+    height: 640px;
+    overflow: hidden;
+    border-radius: 6px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 12px $flyv-doc-simulator-shadow;
 }
