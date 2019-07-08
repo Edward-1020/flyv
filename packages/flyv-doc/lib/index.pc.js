@@ -107,6 +107,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _content_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(17);
 /* harmony import */ var _nav_index__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(22);
 /* harmony import */ var _simulator_index__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(32);
+/* harmony import */ var _util_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(37);
+
 
 
 
@@ -115,9 +117,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var components = [_App_vue__WEBPACK_IMPORTED_MODULE_0__["default"], _container_index__WEBPACK_IMPORTED_MODULE_1__["default"], _head_index__WEBPACK_IMPORTED_MODULE_2__["default"], _content_index__WEBPACK_IMPORTED_MODULE_3__["default"], _nav_index__WEBPACK_IMPORTED_MODULE_4__["default"], _simulator_index__WEBPACK_IMPORTED_MODULE_5__["default"]];
 function install(Vue, opts) {
-  components.map(function (Component) {
-    Vue.component(Component.name, Component);
-  });
+  Object(_util_component__WEBPACK_IMPORTED_MODULE_6__["installComponent"])(components, Vue, opts);
 }
 ;
 
@@ -995,6 +995,20 @@ __webpack_require__.r(__webpack_exports__);
     }
   }
 });
+
+/***/ }),
+/* 37 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "installComponent", function() { return installComponent; });
+function installComponent(components, Vue, opts) {
+  components.map(function (Component) {
+    Vue.component(Component.name, Component);
+  });
+}
+;
 
 /***/ })
 /******/ ]);
