@@ -2,7 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './App.vue';
 import FlyvDoc from '@flyv/doc';
-import '@flyv/doc/lib/style.css';
+import '@flyv/doc/lib/style.pc.css';
 import routes from './config/routes/index';
 
 Vue.config.productionTip = false;

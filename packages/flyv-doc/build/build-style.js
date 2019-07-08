@@ -14,7 +14,7 @@ gulp.task('build', () => {
       ]
   )
     .pipe(sass().on('error', sass.logError))
-    .pipe(concat('style.css'))
+    .pipe(concat('style.pc.css'))
     .pipe(cssmin())
     .pipe(gulp.dest(path.resolve(__dirname, '../lib')));
 });

@@ -88,7 +88,8 @@ module.exports = {
         })
     ],
     resolve: {
-        extensions: ['.js', '.ts', '.tsx', '.vue']
+        extensions: ['.js', '.ts', '.tsx', '.vue'],
+        mainFields: ['pc', 'mobile', 'main']
     },
     devServer: {
         contentBase: path.resolve(__dirname, '../lib'),
