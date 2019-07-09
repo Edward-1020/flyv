@@ -5,7 +5,12 @@
 </template>
 
 <script type="text/ecmascript-6">
+import { syncPath } from '../../../util/iframe';
+
 export default {
-    name: 'flyv-doc-simulator'
+    name: 'flyv-doc-simulator',
+    mounted () {
+        syncPath();
+    }
 }
 </script>

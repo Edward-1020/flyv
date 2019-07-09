@@ -6,7 +6,7 @@ import Nav from './nav/index';
 import Simulator from './simulator/index';
 
 import { installComponent } from '../../util/component';
-
+import { syncPath, getSimulatorIframe } from '../../util/iframe';
 
 const components = [
     App,
@@ -19,4 +19,8 @@ const components = [
 
 export default function install (Vue, opts) {
     installComponent(components, Vue, opts)
+};
+
+getSimulatorIframe.onload = () => {
+    syncPath();
 };

@@ -256,6 +256,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _App_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(39);
 /* harmony import */ var _head_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(44);
 /* harmony import */ var _util_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(37);
+/* harmony import */ var _util_iframe__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(49);
+
 
 
 
@@ -264,6 +266,7 @@ function install(Vue, opts) {
   Object(_util_component__WEBPACK_IMPORTED_MODULE_2__["installComponent"])(components, Vue, opts);
 }
 ;
+Object(_util_iframe__WEBPACK_IMPORTED_MODULE_3__["syncPath"])('mobile');
 
 /***/ }),
 /* 39 */
@@ -470,6 +473,44 @@ __webpack_require__.r(__webpack_exports__);
     }
   }
 });
+
+/***/ }),
+/* 49 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mobileBasePath", function() { return mobileBasePath; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "syncPath", function() { return syncPath; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSimulatorIframe", function() { return getSimulatorIframe; });
+var mobileBasePath = '/mobile.html';
+var syncPath = function syncPath() {
+  var type = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'pc';
+
+  var simulatorGoPath = function simulatorGoPath() {
+    var simulatorIframe = getSimulatorIframe();
+    simulatorIframe.src = mobileBasePath + window.location.hash;
+  };
+
+  var goPath = function goPath() {
+    var pcWindow = window.parent;
+    pcWindow.location.href = '/' + window.location.hash;
+  };
+
+  if (type === 'pc') {
+    simulatorGoPath();
+    window.addEventListener('hashchange', function () {
+      simulatorGoPath();
+    }, false);
+  } else {
+    window.addEventListener('hashchange', function () {
+      goPath();
+    }, false);
+  }
+};
+var getSimulatorIframe = function getSimulatorIframe() {
+  return window.frames['flyv-doc-simulator'];
+};
 
 /***/ })
 /******/ ]);

@@ -108,6 +108,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _nav_index__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(22);
 /* harmony import */ var _simulator_index__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(32);
 /* harmony import */ var _util_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(37);
+/* harmony import */ var _util_iframe__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(49);
+
 
 
 
@@ -120,6 +122,10 @@ function install(Vue, opts) {
   Object(_util_component__WEBPACK_IMPORTED_MODULE_6__["installComponent"])(components, Vue, opts);
 }
 ;
+
+_util_iframe__WEBPACK_IMPORTED_MODULE_7__["getSimulatorIframe"].onload = function () {
+  Object(_util_iframe__WEBPACK_IMPORTED_MODULE_7__["syncPath"])();
+};
 
 /***/ }),
 /* 1 */
@@ -984,14 +990,19 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _util_iframe__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(49);
 //
 //
 //
 //
 //
 //
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'flyv-doc-simulator'
+  name: 'flyv-doc-simulator',
+  mounted: function mounted() {
+    Object(_util_iframe__WEBPACK_IMPORTED_MODULE_0__["syncPath"])();
+  }
 });
 
 /***/ }),
@@ -1007,6 +1018,55 @@ function installComponent(components, Vue, opts) {
   });
 }
 ;
+
+/***/ }),
+/* 38 */,
+/* 39 */,
+/* 40 */,
+/* 41 */,
+/* 42 */,
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mobileBasePath", function() { return mobileBasePath; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "syncPath", function() { return syncPath; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSimulatorIframe", function() { return getSimulatorIframe; });
+var mobileBasePath = '/mobile.html';
+var syncPath = function syncPath() {
+  var type = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'pc';
+
+  var simulatorGoPath = function simulatorGoPath() {
+    var simulatorIframe = getSimulatorIframe();
+    simulatorIframe.src = mobileBasePath + window.location.hash;
+  };
+
+  var goPath = function goPath() {
+    var pcWindow = window.parent;
+    pcWindow.location.href = '/' + window.location.hash;
+  };
+
+  if (type === 'pc') {
+    simulatorGoPath();
+    window.addEventListener('hashchange', function () {
+      simulatorGoPath();
+    }, false);
+  } else {
+    window.addEventListener('hashchange', function () {
+      goPath();
+    }, false);
+  }
+};
+var getSimulatorIframe = function getSimulatorIframe() {
+  return window.frames['flyv-doc-simulator'];
+};
 
 /***/ })
 /******/ ]);
