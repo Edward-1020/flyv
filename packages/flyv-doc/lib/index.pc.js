@@ -402,10 +402,7 @@ var render = function() {
       _vm._v(" "),
       _c("flyv-doc-content", [_vm._t("default")], 2),
       _vm._v(" "),
-      _c(
-        "flyv-doc-simulator",
-        _vm._b({}, "flyv-doc-simulator", _vm.config.simulator, false)
-      )
+      _c("flyv-doc-simulator")
     ],
     1
   )
@@ -956,11 +953,18 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "flyv-doc-simulator" }, [
-    _c("iframe", { attrs: { src: _vm.iframePath, frameborder: "0" } })
-  ])
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flyv-doc-simulator" }, [
+      _c("iframe", { attrs: { id: "flyv-doc-simulator", frameborder: "0" } })
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -987,13 +991,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'flyv-doc-simulator',
-  props: {
-    iframePath: {
-      type: String,
-      "default": ''
-    }
-  }
+  name: 'flyv-doc-simulator'
 });
 
 /***/ }),

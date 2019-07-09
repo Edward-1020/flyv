@@ -4,7 +4,7 @@
             <flyv-doc-content>
                 <slot />
             </flyv-doc-content>
-            <flyv-doc-simulator v-bind="config.simulator"/>
+            <flyv-doc-simulator/>
     </div>
 </template>
 
