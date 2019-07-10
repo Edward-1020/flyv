@@ -1,6 +1,11 @@
 module.exports = function () {
     const presets = [
-        '@babel/preset-env',
+        [
+            '@babel/preset-env',
+            {
+                modules: false
+            }
+        ],
         '@babel/preset-typescript'
     ];
     const plugins = [
